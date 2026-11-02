@@ -3,8 +3,9 @@
 # What it is and how to use it #
 My project is a device that will be able to detect the presence for sickle cell anemia in hemoglobin.
 You give a drop of blood, and the device will use a process called electrophoresis which will separate the blood 
-and tell the user whether or not they have sickle cell or not (and yes, it will actually work unlike Theranos).
-I plan to make it a point-of-care (POC) device.
+and tell the user whether or not they have sickle cell or not (and yes, it will actually work unlike Theranos). The device
+will use 3-bit array of photodiodes and 540nm LEDs in a sealed enclosure to provide accurate results. I plan to make it a point-of-care (POC) device.
+
 
 # Why I made it #
 I'd realised that "third world countries" are the most exploited and most used for resources and things along that vain
