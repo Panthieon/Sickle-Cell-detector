@@ -14,7 +14,10 @@ treatment that they get but I hope that just one more life can be saved because 
 something I made in my room will hopefully show other people that helping other humans is actually worthwhile. 
 
 # 3D model #
-(Still in progress)
+V.0.1
 https://cad.onshape.com/documents/ac5d915b7dd56fe7887c1290/w/e9d363a77695b765c791623f/e/d9d70f5a69e87de0878bb7b5?renderMode=0&uiState=6ae7c165631afd0008e3419c
 Link to my OnShape model. This will in close the parts of the device.
 
+V.0.2
+https://cad.onshape.com/documents/049959b67cfd6dc5f4ab098d/w/375048fa51df30f6dd2c9980/e/a6782179d54698f48a207f64?renderMode=0&uiState=6aea72344f4c2c1c2baf14a5
+Link to my OnShape model.
