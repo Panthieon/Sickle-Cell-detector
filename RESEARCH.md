@@ -1,6 +1,8 @@
 # Research notes
 
-Background science, design decisions and open questions for the Sickle Cell Detector. This is a living document. Items marked **(to verify)** are my own estimates or things I still need a source for.
+These notes are just directly from my iPad and converted to make more sense.
+(Claude was used to structure the conversion, but they are all my personal notes)
+
 
 ## 1. The biology
 
