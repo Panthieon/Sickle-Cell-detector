@@ -72,7 +72,9 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
   
 - [V.0.2 (OnShape)](https://cad.onshape.com/documents/049959b67cfd6dc5f4ab098d/w/375048fa51df30f6dd2c9980/e/a6782179d54698f48a207f64?renderMode=0&uiState=6aea72344f4c2c1c2baf14a5): 
 
-- [V.0.3 (OnShape)](https://cad.onshape.com/documents/633eec5867b5b4bc40dc1a9c/w/6806ada02e6d3b0567c96b86/e/820ddc78e995182a8570b57b?renderMode=0&uiState=6aefac22679dc84116f17ebd): newest prototype
+- [V.0.3 (OnShape)](https://cad.onshape.com/documents/633eec5867b5b4bc40dc1a9c/w/6806ada02e6d3b0567c96b86/e/820ddc78e995182a8570b57b?renderMode=0&uiState=6aefac22679dc84116f17ebd): 
+  
+- [V.0.4 (OnShape)](https://cad.onshape.com/documents/47ab40eb762feee9ffd6612a/w/5b9899adb3dfb9fb330092ec/e/f19f73eaa2c35cfabcb71556?renderMode=0&uiState=6af0e8059aba66657643dbe8): newest prototype
 
 ## Roadmap
 
