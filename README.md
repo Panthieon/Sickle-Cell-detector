@@ -37,6 +37,14 @@ V.0.3
 
  I increased the length of the track to 8cm
 
+ V.0.4 (current)
+ | Quantity | Formula | Value |
+|---|---|---|
+| Electric field | E = V / d | 120V / 7 cm ≈ 17,14 V/cm |
+| Mobility (Hb, Acid buffer, estimated) | μ | ≈ 2.5 × 10⁻⁴ cm²/(V·s) |
+| Velocity | v = μ × E | ≈ 0.004285 cm/s |
+| Run time | t = d / v | ≈ 1633.605 s ≈ 27.2 min |
+
 These are estimates from literature ranges for μ. Real run times will be measured during testing.
 
 ### Logic table (draft)
