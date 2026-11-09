@@ -1,0 +1,184 @@
+
+
+
+
+from machine import ADC, Pin
+import time
+
+# ---------------- Pins ----------------
+LED_PINS = [2, 3, 4]        # green LEDs under the strip (use a resistor on each)
+ADC_PINS = [26, 27, 28]     # photodiodes above the strip (ADC0, ADC1, ADC2)
+START_PIN = 15              # lid switch: reads 0 (LOW) when the lid is closed
+
+leds = [Pin(p, Pin.OUT) for p in LED_PINS]
+adcs = [ADC(Pin(p)) for p in ADC_PINS]
+lid = Pin(START_PIN, Pin.IN, Pin.PULL_UP)
+
+# ---------------- Settings (tune these on the bench) ----------------
+SAMPLE_MS = 500             # time between readings during a run
+BASELINE_SAMPLES = 10       # readings averaged to get each channel's "clear" level
+N_AVG = 16                  # ADC reads averaged per channel (the Pico's ADC is noisy)
+DROP_FRACTION = 0.70        # a channel is "Drop" (0) below this fraction of its baseline
+MIN_BASELINE = 2000         # baseline below this (out of 65535) means a sensor/LED fault
+RUN_SECONDS = 40 * 60       # timeout for a full run
+DEMO_MODE = True            # True = dye demo: also report band timing and speed
+SENSOR_SPACING_CM = 2.0     # distance between neighbouring photodiodes (measure yours)
+
+# NOTE: this code assumes MORE light = HIGHER ADC reading.
+# If your circuit is the other way round (more light = lower reading), you need
+# to flip the comparison in make_pattern() and the baseline check.
+
+
+# ---------------- Hardware helpers ----------------
+def leds_on():
+    for led in leds:
+        led.value(1)
+
+
+def leds_off():
+    for led in leds:
+        led.value(0)
+
+
+def read_avg(adc, n=N_AVG):
+    """Average n ADC reads to reduce noise."""
+    total = 0
+    for _ in range(n):
+        total += adc.read_u16()
+    return total // n
+
+
+def read_channels():
+    """Return 3 readings with room light subtracted.
+
+    Reads once with the LEDs off (ambient/leak light), once with them on,
+    and subtracts, so stray light does not fool the sensors.
+    """
+    leds_off()
+    time.sleep_ms(5)
+    dark = [read_avg(a) for a in adcs]
+
+    leds_on()
+    time.sleep_ms(15)  # let the photodiodes settle
+    lit = [read_avg(a) for a in adcs]
+    leds_off()         # LEDs only on briefly, which limits heat and drift
+
+    return [max(l - d, 0) for l, d in zip(lit, dark)]
+
+
+def measure_baseline():
+    """Average several readings of the clear strip to get each channel's own 'clear' level."""
+    sums = [0, 0, 0]
+    for _ in range(BASELINE_SAMPLES):
+        readings = read_channels()
+        for i in range(3):
+            sums[i] += readings[i]
+        time.sleep_ms(100)
+    return [s // BASELINE_SAMPLES for s in sums]
+
+
+def make_pattern(readings, baseline):
+    """Clear (enough light) = '1', Drop (band absorbing light) = '0'."""
+    bits = []
+    for r, b in zip(readings, baseline):
+        bits.append("1" if r >= DROP_FRACTION * b else "0")
+    return "".join(bits)
+
+
+# ---------------- Classification ----------------
+# Copied from the logic table in my notes (Clear = 1, Drop = 0).
+# CHECK EVERY ROW against the original table before trusting it.
+MAPPING = {
+    "110": ("VALID", "Normal (HbAA)"),
+    "011": ("VALID", "Sickle cell (HbSS)"),
+    "010": ("VALID", "Sickle trait (HbAS)"),
+    "001": ("VALID", "HbSC / trait"),
+    "101": ("WARNING", "Incomplete test"),
+    "100": ("WARNING", "Slow separation, bands not fully across"),
+    "111": ("ERROR", "No sample / blank"),
+    "000": ("ERROR", "Smear / overload"),
+}
+
+
+def classify(pattern):
+    return MAPPING.get(pattern, ("UNKNOWN", "Unrecognised pattern"))
+
+
+def show_result(pattern, status, name):
+    """Replace the prints with display code once the display is wired up."""
+    print("==================================================")
+    print("PATTERN :", pattern)
+    print("STATUS  :", status)
+    print("RESULT  : Presumptive screening result:", name)
+    print("(Not a diagnosis. Needs lab confirmation.)")
+    print("==================================================")
+
+
+# ---------------- A full run ----------------
+def run_test():
+    """Sample continuously, track when each sensor first sees a dip, classify at the end."""
+    print("Measuring baseline (strip must be clear, lid closed)...")
+    baseline = measure_baseline()
+    print("Baseline:", baseline)
+
+    for b in baseline:
+        if b < MIN_BASELINE:
+            print("ERROR: baseline too low. Check LEDs, wiring, and the sensor circuit.")
+            return None, None
+
+    print("Run started. Timeout:", RUN_SECONDS, "s")
+    start_ms = time.ticks_ms()
+    first_dip = [None, None, None]   # seconds at which each channel first dropped
+    pattern = "111"
+
+    while True:
+        if lid.value() == 1:
+            print("Lid opened. Run aborted.")
+            return None, None
+
+        elapsed = time.ticks_diff(time.ticks_ms(), start_ms) / 1000
+        if elapsed >= RUN_SECONDS:
+            break
+
+        readings = read_channels()
+        pattern = make_pattern(readings, baseline)
+
+        for i in range(3):
+            if pattern[i] == "0" and first_dip[i] is None:
+                first_dip[i] = elapsed
+
+        if DEMO_MODE:
+            print("t={:.1f}s  raw={}  pattern={}".format(elapsed, readings, pattern))
+
+        time.sleep_ms(SAMPLE_MS)
+
+    return pattern, first_dip
+
+
+def report_band_speed(first_dip):
+    """Dye demo: estimate band speed from the time between sensor dips."""
+    for i in range(2):
+        t1, t2 = first_dip[i], first_dip[i + 1]
+        if t1 is not None and t2 is not None and t2 > t1:
+            speed = SENSOR_SPACING_CM / (t2 - t1)
+            print("Band speed between sensor {} and {}: {:.4f} cm/s".format(i + 1, i + 2, speed))
+        else:
+            print("No timing between sensor {} and {}.".format(i + 1, i + 2))
+
+
+# ---------------- Main loop ----------------
+print("--- Hemoglobin electrophoresis monitor ---")
+print("Close the lid to start.\n")
+
+while True:
+    if lid.value() == 0:   # lid closed
+        pattern, first_dip = run_test()
+        if pattern is not None:
+            status, name = classify(pattern)
+            show_result(pattern, status, name)
+            if DEMO_MODE:
+                report_band_speed(first_dip)
+        print("Open the lid, then close it to run again.\n")
+        while lid.value() == 0:      # wait until the lid is opened again
+            time.sleep_ms(200)
+    time.sleep_ms(200)
