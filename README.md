@@ -100,6 +100,4 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 - Results need validation against a reference method (for example, lab electrophoresis or HPLC) before they mean anything.
 - Blood handling needs proper safety practice. Prototypes should be tested with approved control samples (not real blood).
 
-## License
 
-See (LICENSE).
