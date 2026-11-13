@@ -70,7 +70,7 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 - Custom PCB (EasyEDA) for amplification and signal conditioning
 - Electrophoresis chamber with electrodes and a sample slot
 - Colour display and power switch
-- Light-tight enclosure (about 18 × 14 × 10 cm) designed in OnShape
+- Light-tight enclosure (about 17 × 14 × 10 cm) designed in OnShape
 - Power: external bench supply for testing. Battery power comes after the core mechanism is validated.
 
 
@@ -89,10 +89,10 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 - [x] Concept, layout and logic table
 - [x] Enclosure models (V0.1, V0.2)
 - [ ] PCB schematic and layout
-- [ ] Assemble the electrophoresis chamber
-- [ ] Firmware for reading the photodiodes and the logic lookup
+- [x] Assemble the electrophoresis chamber
+- [x] Firmware for reading the photodiodes and the logic lookup
 - [ ] Validate against known HbAA, HbAS and HbSS samples (with a mentor or lab)
-- [ ] Battery power and a final enclosure
+- [x] Battery power and a final enclosure
 
 ## Limitations
 
