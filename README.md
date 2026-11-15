@@ -73,6 +73,9 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 - Light-tight enclosure (about 17 × 14 × 10 cm) designed in OnShape
 - Power: external bench supply for testing. Battery power comes after the core mechanism is validated.
 
+### PCB schematic
+
+![PCB schematic](Schematics/Screenshot%202026-11-14%20200232.png)
 
 ## 3D models
 
