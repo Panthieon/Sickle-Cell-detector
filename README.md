@@ -37,6 +37,14 @@ V.0.3
 
  I increased the length of the track to 8cm
 
+ V.0.4 (current)
+ | Quantity | Formula | Value |
+|---|---|---|
+| Electric field | E = V / d | 120V / 7 cm ≈ 17,14 V/cm |
+| Mobility (Hb, Acid buffer, estimated) | μ | ≈ 2.5 × 10⁻⁴ cm²/(V·s) |
+| Velocity | v = μ × E | ≈ 0.004285 cm/s |
+| Run time | t = d / v | ≈ 1633.605 s ≈ 27.2 min |
+
 These are estimates from literature ranges for μ. Real run times will be measured during testing.
 
 ### Logic table (draft)
@@ -62,7 +70,7 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 - Custom PCB (EasyEDA) for amplification and signal conditioning
 - Electrophoresis chamber with electrodes and a sample slot
 - Colour display and power switch
-- Light-tight enclosure (about 18 × 14 × 10 cm) designed in OnShape
+- Light-tight enclosure (about 17 × 14 × 10 cm) designed in OnShape
 - Power: external bench supply for testing. Battery power comes after the core mechanism is validated.
 
 
@@ -72,17 +80,19 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
   
 - [V.0.2 (OnShape)](https://cad.onshape.com/documents/049959b67cfd6dc5f4ab098d/w/375048fa51df30f6dd2c9980/e/a6782179d54698f48a207f64?renderMode=0&uiState=6aea72344f4c2c1c2baf14a5): 
 
-- [V.0.3 (OnShape)](https://cad.onshape.com/documents/633eec5867b5b4bc40dc1a9c/w/6806ada02e6d3b0567c96b86/e/820ddc78e995182a8570b57b?renderMode=0&uiState=6aefac22679dc84116f17ebd): newest prototype
+- [V.0.3 (OnShape)](https://cad.onshape.com/documents/633eec5867b5b4bc40dc1a9c/w/6806ada02e6d3b0567c96b86/e/820ddc78e995182a8570b57b?renderMode=0&uiState=6aefac22679dc84116f17ebd): 
+  
+- [V.0.4 (OnShape)](https://cad.onshape.com/documents/47ab40eb762feee9ffd6612a/w/5b9899adb3dfb9fb330092ec/e/f19f73eaa2c35cfabcb71556?renderMode=0&uiState=6af0e8059aba66657643dbe8): newest prototype
 
 ## Roadmap
 
 - [x] Concept, layout and logic table
 - [x] Enclosure models (V0.1, V0.2)
 - [ ] PCB schematic and layout
-- [ ] Assemble the electrophoresis chamber
-- [ ] Firmware for reading the photodiodes and the logic lookup
+- [x] Assemble the electrophoresis chamber
+- [x] Firmware for reading the photodiodes and the logic lookup
 - [ ] Validate against known HbAA, HbAS and HbSS samples (with a mentor or lab)
-- [ ] Battery power and a final enclosure
+- [x] Battery power and a final enclosure
 
 ## Limitations
 
@@ -90,6 +100,4 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 - Results need validation against a reference method (for example, lab electrophoresis or HPLC) before they mean anything.
 - Blood handling needs proper safety practice. Prototypes should be tested with approved control samples (not real blood).
 
-## License
 
-See (LICENSE).
