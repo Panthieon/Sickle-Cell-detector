@@ -1,17 +1,17 @@
-Item,Description,Quantity,Unit Cost,Total,Currency,URL,Notes
-1,"Electrical gloves",1,18.35,18.35,CAD,https://a.co/d/0fIFAmdx,
-2,"Soldering Iron",1,23.99,23.99,CAD,https://a.co/d/04LG5kCc,
-3,"Protoboard",1,14.11,14.11,CAD,https://a.co/d/08zm7Ou6,
-4,"Solder & Flux",1,18.35,18.35,CAD,https://a.co/d/05foTEcK,
-5,"Raspberry Pi Pico 2",1,25.99,25.99,CAD,https://a.co/d/08Oxf8if,
-6,"Green LEDs",1,9.88,9.88,CAD,https://a.co/d/0bozsDdU,
-7,"Photodiodes",1,15.45,15.45,CAD,https://a.co/d/0c0zvzFN,
-8,"Buffer 1x TBE",1,69.85,69.85,CAD,https://www.genebiosystems.com/products/pre-weighed-ready-to-use-buffer-tbe,
-9,"Red 40 dye",1,12.50,12.50,CAD,https://www.windypointsoap.com/products/really-red-water-soluble-dye?variant=20919502635067,
-10,"DC Power Supply Variable, 0-120V",1,87.20,87.20,CAD,https://a.co/d/03aWaCcI,
-11,"Display",1,5.99,5.99,CAD,https://a.co/d/0fMXG4S9,
-12,"Stainless Steel screws",1,17.90,17.90,CAD,https://a.co/d/04ASh6ZH,
-13,"On/off switch",1,9.99,9.99,CAD,https://a.co/d/0iNm1xSJ,
-14,"Acetate Strips",1,93.96,93.96,CAD,https://a.co/d/0gXKPCV3,
-15,"Copper Wire",1,18.99,18.99,CAD,https://a.co/d/04bfbbXN,
-16,"Total + Tax",1,545.45,545.45,CAD,,
+Part,Description,URL,URL Note,Price,Quantity,Currency,Sourcing,Subtotals
+Electrical gloves,,https://a.co/d/0fIFAmdx,,18.35,1,CAD,,18.35
+Soldering Iron,,https://a.co/d/04LG5kCc,,23.99,1,CAD,,23.99
+Protoboard,,https://a.co/d/08zm7Ou6,,14.11,1,CAD,,14.11
+Solder & Flux,,https://a.co/d/05foTEcK,,18.35,1,CAD,,18.35
+Raspberry Pi Pico 2,,https://a.co/d/08Oxf8if,,25.99,1,CAD,,25.99
+Green LEDs,,https://a.co/d/0bozsDdU,,9.88,1,CAD,,9.88
+Photodiodes,,https://a.co/d/0c0zvzFN,,15.45,1,CAD,,15.45
+Buffer 1x TBE,,https://www.genebiosystems.com/products/pre-weighed-ready-to-use-buffer-tbe,,69.85,1,CAD,,69.85
+Red 40 dye,,https://www.windypointsoap.com/products/really-red-water-soluble-dye?variant=20919502635067,,12.50,1,CAD,,12.50
+DC Power Supply Variable, 0-120V,,https://a.co/d/03aWaCcI,,87.20,1,CAD,,87.20
+Display,,https://a.co/d/0fMXG4S9,,5.99,1,CAD,,5.99
+Stainless Steel screws,,https://a.co/d/04ASh6ZH,,17.90,1,CAD,,17.90
+On/off switch,,https://a.co/d/0iNm1xSJ,,9.99,1,CAD,,9.99
+Acetate Strips,,https://a.co/d/0gXKPCV3,,93.96,1,CAD,,93.96
+Copper Wire,,https://a.co/d/04bfbbXN,,18.99,1,CAD,,18.99
+Total + Tax,,,grand total,545.45,1,CAD,,545.45
