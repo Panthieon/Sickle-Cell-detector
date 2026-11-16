@@ -236,7 +236,7 @@ They arrange themselves as two leaflets where the hydrophilic heads face outward
  | | | | | | | |
  O O O O O O O O     <- hydrophilic heads (facing the inside liquid)
 ```
-### How this tie in
+### How this ties in
 
 ### 1. Hemoglobin is a protein, and its charge is the basis of the test
 
