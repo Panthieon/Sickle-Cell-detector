@@ -47,17 +47,12 @@ Using v = mu x E and t = d / v, with the gap between the buffer wells as d.
 |---|---|
 | Electrode gap (d) | 8 cm |
 | Mobility (mu), estimated | about 2.5 x 10^-4 cm^2/(V s) **(to verify)** |
-| Voltage | 90 V |
-| Field E = V / d | 11.25 V/cm |
-| Velocity | about 0.0028 cm/s |
-| Time to cross the gap | about 2,840 s, roughly 47 min |
+| Voltage | 120 V |
+| Field E = V / d | 17.14 V/cm |
+| Velocity | about  0.004285 cm/s |
+| Time to cross the gap | about 1633,605 s, roughly 27.4 min |
 
-With a 30 V supply, E is about 3.75 V/cm, and the velocity drops to about 0.00094 cm/s, so crossing the whole gap would take around 2.4 hours. To keep the demo short:
-
-- Place the three photodiodes close to the start line (first 3 to 4 cm), and/or
-- Measure the real dye speed on a bench test and rebuild the numbers from that.
-
-The mobility value is an estimate. I will replace it with a measured value.
+With a 120 V supply, E is about 17.14 V/cm, and the velocity drops to about  0.004285  cm/s, so crossing the whole gap would take around 27.4 Min To keep the.
 
 ## 6. Materials decisions
 
