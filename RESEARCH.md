@@ -58,13 +58,13 @@ With a 120 V supply, E is about 17.14 V/cm, and the velocity drops to about  0.0
 
 | Item | Choice | Notes |
 |---|---|---|
-| Strip | Cellulose acetate electrophoresis membrane, 8 x 12 cm sheets | Cut into strips about 1.5 to 2 cm wide and 10 cm long |
+| Strip | Cellulose acetate electrophoresis membrane, 8 x 12 cm sheets | Cut into strips about 1.5 to 2 cm wide and 7.4 cm long |
 | Backup strip | Chromatography paper | For the dye demo only |
 | Buffer (hemoglobin) | Tris-borate-EDTA (TBE), pH about 8.4 | Matches clinical practice |
 | Buffer (dye demo) | TBE, or dilute sodium bicarbonate as a fallback | |
 | Wells | About 3 cm long, 4 cm wide, 2 cm deep, filled to about 1 cm | Equal levels in both wells |
-| Power | Bench supply, 0 to 30 V with current limit | Electrodes fully enclosed |
-| Enclosure | 14.8 x 5.6 cm, hinged lid, black, light-sealed | With a lid interlock |
+| Power | Bench supply, 0 to 120 V with current limit | Electrodes fully enclosed |
+| Enclosure | 17.3 x 5.6 cm, hinged lid, black, light-sealed | With a lid interlock |
 
 Sodium citrate buffer (pH about 6) belongs with citrate agar as a *confirmation* method, not as the main buffer for cellulose acetate.
 
