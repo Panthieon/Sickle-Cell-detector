@@ -391,7 +391,7 @@ The amount of light absorbed by a liquid depends directly on how concentrated th
 
 ---
 
-## 5. Why Green LEDs / Light?  *(November 16, 2026)*
+## 5. Why Green LEDs / Light?  
 
 I'm using green LEDs because hemoglobin absorbs it really well, because of something in it called **heme**.
 
