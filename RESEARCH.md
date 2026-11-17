@@ -273,8 +273,149 @@ Hemoglobin sits inside red blood cells, behind a lipid bilayer membrane. The cel
 
 Lower pH and low oxygen both promote sickling. Hemoglobin releases oxygen more readily as pH drops (the Bohr effect), and deoxygenated HbS is the form that polymerizes. The bicarbonate buffer keeps blood near 7.4 partly to avoid pushing this process.
 
-### 6. Detection: why a green LED fits
+# Sickle Cell Research Notes
 
-Hemoglobin absorbs strongly in the green range (oxyhemoglobin peaks around 540 and 577 nm), so unstained bands show up as dark regions in green light. This fits the green LED and photodiode array transmission setup.
+*Compiled from handwritten notes. The green-light/heme section was written November 16, 2026. Pages were reordered by topic.*
+
+---
+
+## 1. Hemoglobin Variants
+
+There are four main variants of hemoglobin. All four involve a change to the glutamic acid in the **beta chain**.
+
+| Variant | Name | Change | Most common in | Effect |
+|---|---|---|---|---|
+| **HbS** | Sickle cell hemoglobin | Glutamic acid → **valine** at position 6 | (malaria regions) | The change allows polymerization inside the red blood cell |
+| **HbC** | Hemoglobin C | Glutamic acid → **lysine** at position 6 (same spot as HbS) | West Africa | Reduced solubility, so hemoglobin forms rigid hexagonal crystals inside red blood cells. Two copies cause mild chronic hemolytic anemia |
+| **HbD** | Hemoglobin D (Punjab / Los Angeles) | Glutamic acid → **glutamine** at position 121 | Northwest India and Pakistan | Harmless, no symptoms. But inheriting HbD from one parent and HbS from the other gives **HbSD**, which can cause severe sickling symptoms similar to HbS |
+| **HbE** | Hemoglobin E | Glutamic acid → **lysine** at position 26 | Southeast Asia | Hemoglobin is slightly less stable, and the body produces it more slowly. One or two copies cause no symptoms, usually just mild anemia |
+
+> **Hemolytic anemia:** a type of anemia where the red blood cells are destroyed and removed from the blood stream faster than the bone marrow can replace them.
+
+### Why do they all swap out glutamic acid?
+
+**Location (survivability)**
+- Glutamic acid is a negatively charged, hydrophilic amino acid, so evolution put it on the *outside* of the protein to keep it smoothly dissolved in blood.
+- Mutations on the outside tend to leave the oxygen-carrying inside intact.
+- A mutation on the *inside* could damage the oxygen-carrying part, which would be fatal for the cell, so the trait wouldn't get passed on.
+
+**Malaria protection (natural selection)**
+- Having a copy of HbS, HbC, or HbE gives people strong natural protection against malaria.
+- Malaria is a major killer in tropical regions like Sub-Saharan Africa and South Asia, so people carrying these traits lived long enough to pass them on.
+
+**Easy detection (why they were found first)**
+- Glutamic acid carries a strong negative charge (−1). When it is swapped for a neutral or positively charged variant, the overall charge changes drastically.
+- This is what allows electrophoresis to actually work.
+
+---
+
+## 2. Background: Polymerization
+
+**Polymerization** is the process in which thousands of small, simple molecules link together end-to-end to form a giant chain-like molecule (Power Rangers style).
+
+**Building blocks**
+- **Monomers:** the small molecules you start with. They tend to be gases or thin liquids.
+- **Polymers:** a giant chain of monomers locked together. Because the chains get so large and tangled with one another, they form solid, flexible, or stretchy materials (plastic, rubber, or deoxyribonucleic acid).
+
+### Two main polymer types
+
+**Addition polymerization**
+- Monomers have double chemical bonds that "open up" (like holding hands), which allows them to bond without losing any atoms.
+- Common with plastics like polyethylene (plastic bags and bottles) and PVC (plumbing pipes).
+- No by-products, meaning no atoms were lost in the process.
+- Example drawn: C=C with four H's (polyethylene).
+
+**Condensation polymerization**
+- Two different monomers join up, and every time they link up they kick out a tiny leftover molecule, usually water.
+- This is how nylon, polyester, and even proteins in your body are built.
+- Example drawn: a dicarboxylic acid monomer (HO–C(=O)–[R]–C(=O)–OH) bonding with a diol (HO–[R]–OH). An H and an OH are released and form **H₂O**.
+
+**Summary**
+- Polymerization occurs when monomers start binding to one another and form polymers.
+- *Addition:* two like monomers bond with one another, leaving no by-product.
+- *Condensation:* two unlike monomers bond, one leaving H and the other leaving OH. They get rid of the H and OH to bond with each other, and the H and OH form H₂O.
+
+---
+
+## 3. How HbS Behaves
+
+### Deoxygenation and oxygenation (HbS)
+- In sickle cell hemoglobin (HbS), **oxygenation keeps proteins flexibly apart**, while **deoxygenation** causes a slight shape change that makes HbS molecules stick to one another and polymerize into rigid fibers.
+
+### HbA vs HbS
+- Normally, adult hemoglobin (HbA) is smooth with a water-friendly outermost shell. The molecules also bounce off one another in a safe manner.
+- With HbS, that outer shell becomes hydrophobic and sticky, sticking onto other cells.
+- When **oxygenated**, HbS is exactly the same as HbA. The oxygen pulls on the iron in heme, which changes the molecule into its **R-state (Relaxed State)**. This hides the sticky valine part on the outside of the molecule, so it works as intended.
+- When the oxygen is dropped off at its intended location, the hemoglobin changes as the iron moves back into place, changing it into its **T-state (Tense State)**. This wider, open shape shows the once-hidden pocket of valine.
+- That exposed valine pocket connects with other pockets of valine on other molecules. This starts a chain causing rapid polymerization.
+- The result is thousands of HbS molecules linking together and forming long, stiff, rod-like cables.
+- This changes the red blood cell from a soft disk to a hard crescent (sickle) shape that can jam small blood vessels.
+
+### The reversible cycle
+- If the sickled blood gets back to the lungs in time to get oxygenated, the fibers start to separate from one another.
+- But after doing this too many times, the cell can become **permanently damaged**.
+
+### In summary
+- Oxygenated HbS behaves like HbA. When it is not oxygenated, the shape changes and valine molecules inside the cell start bonding to one another and stretch out the cell, causing it to sickle.
+- This happening to thousands of cells can cause serious harm to the body.
+
+---
+
+## 4. Measuring Blood Oxygen
+
+When oxygen binds to the iron in heme, the **molar absorptivity** (how greedy it is for light) drops sharply. Blasting red and infrared light and using the Beer-Lambert Law (BLL) allows you to determine the percentage of hemoglobin carrying oxygen.
+
+### Beer-Lambert Law (BLL)
+
+The amount of light absorbed by a liquid depends directly on how concentrated the light-absorbing substance is and how thick the liquid is.
+
+**A = ε · c · L**
+
+| Symbol | Meaning |
+|---|---|
+| **A** | Absorbance: how much light gets trapped |
+| **ε** | Molar absorptivity: how naturally greedy a specific molecule is for a certain colour of light |
+| **c** | Concentration: how many of these greedy molecules are packed into an area |
+| **L** | Path length (thickness) |
+
+- **Concentration example:** add powdered juice to a glass of water. The water gets darker, which absorbs more light.
+- **Path length example:** pour that same juice into a wider glass and the absorption of light increases.
+
+**Summary:** concentration, thickness, and molar absorptivity determine how much light gets trapped in a substance. In hemoglobin, the heme gets a sharp decrease in molar absorptivity when oxygen is introduced. You can shine red and infrared light at blood to determine blood oxygen levels. Alternatively, you could shine **green light to determine BPM**.
+
+### Heart rate with green light
+- Green light is absorbed so well because hemoglobin has a massive ε (molar absorptivity) for green light. It is really greedy for green photons.
+- This is good for us because you only need a tiny amount of blood to absorb a huge, easy amount of green light.
+- Every heartbeat gives fresh oxygenated blood to the body. Looking at a single blood vessel, the concentration (c) and thickness (L) would increase. BLL says absorbance (A) would increase, meaning more green light gets absorbed and less bounces back.
+- By counting these dips and peaks, you are able to count heartbeats.
+
+---
+
+## 5. Why Green LEDs / Light?  *(November 16, 2026)*
+
+I'm using green LEDs because hemoglobin absorbs it really well, because of something in it called **heme**.
+
+### Heme
+- Heme is an iron-containing molecule mostly found in hemoglobin. It has the ability to carry oxygen to your cells so they can produce energy.
+- It is shaped like a **doughnut or ring with an iron in the middle**.
+- The structure acts as a protective shell. The central, positively charged iron ion is great at grabbing gases and electrons moving around.
+- The structure allows electrons to move around freely around the molecule. The size of the (planar) ring determines how much energy the electrons inside it can hold.
+
+### Electronic transitions (Soret and Q-bands)
+- The electrons on the planar ring are able to jump to higher energy levels. To make one of these jumps, the electron must grab energy from a traveling photon with the exact energy level needed.
+- The iron in the middle "fine tunes" the ring so that the energy rings need **blue-violet and green light** to get to the next level.
+- Red light doesn't have the right energy to cause a jump, so it reflects and bounces to your eyes. This is why blood looks red.
+- **Soret band:** a big jump that traps violet and blue light.
+- **Q-bands:** smaller jumps that trap green and yellow light.
+
+### Role of the iron atom
+- The iron ion in the centre pulls on the electrons, and reacting to the molecule's small vibrations it "fine tunes" those energy rings so that green light is absorbed while the red light passes through and reaches your eyes.
+
+**Side note:** when oxygen binds to heme it physically pulls the iron to the centre of the ring, which changes the tuning to absorb less red light. More red light bounces back, making it brighter and redder.
+
+**Side side note:** the iron isn't exactly in the centre, so when oxygen is introduced it pulls on the iron's electrons, allowing it to fit perfectly in the middle. This allows almost no red light to get absorbed.
+
+### Green light summary
+The reason hemoglobin absorbs green light so well is because of a molecule inside of it called heme. Heme has an iron ion at its centre, surrounded by a ring of nitrogens and carbons, and in this ring electrons are able to move freely.
 
 
