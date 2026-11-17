@@ -91,7 +91,7 @@ Gate 1 to 3 are the three photodiodes. **Clear** = high light, **Drop** = low li
 
 - [x] Concept, layout and logic table
 - [x] Enclosure models (V0.1, V0.2)
-- [ ] PCB schematic and layout
+- [x] PCB schematic and layout
 - [x] Assemble the electrophoresis chamber
 - [x] Firmware for reading the photodiodes and the logic lookup
 - [ ] Validate against known HbAA, HbAS and HbSS samples (with a mentor or lab)
