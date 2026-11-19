@@ -413,4 +413,104 @@ I'm using green LEDs because hemoglobin absorbs it really well, because of somet
 ### Green light summary
 The reason hemoglobin absorbs green light so well is because of a molecule inside of it called heme. Heme has an iron ion at its centre, surrounded by a ring of nitrogens and carbons, and in this ring electrons are able to move freely.
 
+## Existing Devices and Prior Work (Nov 18, 2026)
+
+### Background: Two Rapid-Test Approaches
+
+**Lateral flow tests** use capillary action to get their results. Because they use porous paper, they can scale up the sample placed on it and move it across the test. A line made of antibodies binds to specific molecules, and when they react a dye shows a coloured line indicating the result.
+
+**Paper-based electrophoresis** lets you put a drop of blood on a strip of paper/filter and use electricity to move the differently charged molecules in the blood. It has a leg up over lateral flow tests because it doesn't just look for one specific variant of something.
+
+### Comparison
+
+| Device / method | Technique | Hardware cost (USD) | Per test (USD) | Time |
+|---|---|---|---|---|
+| Zero-equipment strips (HemoTypeSC, Sickle Scan) | Lateral flow | $0 | $1-5 | ~5-10 min |
+| Gazelle (Hemex Health) | Microchip electrophoresis | $1,200-3,000 | $2-5 | ~8 min |
+| Hospital HPLC analyzers (Bio-Rad Variant II, Tosoh G8/G11) | HPLC | $30,000-100,000 | $3-10 | n/a |
+| Sebia Capillarys | Capillary electrophoresis | $40,000-100,000 (system) | n/a | n/a |
+| Molecular / genetic (PCR, LAMP, Sanger/NGS) | DNA analysis of the HBB gene | $5,000-15,000 (isothermal/PCR cyclers), ~$100,000 (sequencers) | $10-100 | Hours to days |
+
+### 1. Zero-Equipment Strips (HemoTypeSC, Sickle Scan)
+
+**How they work:** Use lateral flow to move a drop of blood to an antibody strip with a dye.
+
+**Problems they solve**
+- Rapid tests, about 5-10 minutes
+- Cheap
+- Don't need electricity or refrigeration, and are simple
+
+**Limitations**
+- Only give a binary yes/no answer for HbA, HbS and HbC
+- Cannot determine percentages
+- Cannot detect beta-thalassemia
+
+> Beta-thalassemia is an inherited blood disorder where the body doesn't make enough beta-globin, one of the two main protein building blocks for making adult hemoglobin.
+
+### 2. Portable Point-of-Care Analyzer: Gazelle (Hemex Health)
+
+**How it works:** Microchip electrophoresis. It uses an electric field to separate hemoglobin variants by charge on cellulose acetate paper. A camera tracks the migration bands using light absorption.
+
+**Problems it solves**
+- Simple/easy to use
+- Gives exact percentages of HbA, HbS, HbF and HbC
+- Takes about 8 minutes
+- Can detect beta-thalassemia
+
+**Limitations**
+- Too expensive for rural areas
+- Cannot separate between variants that share the same charge
+- Inaccurate after a recent blood transfusion
+- Needs a precise blood-to-buffer mix by the operator
+
+### 3. Hospital Lab Analyzers (Bio-Rad Variant II, Tosoh G8/G11)
+
+**How they work:** High-performance liquid chromatography (HPLC). Blood is pumped under high pressure through a negatively charged resin column. Different variants stick to the column with different strengths and wash out at exact times, measured by a UV/visible light detector.
+
+**Problems they solve**
+- Able to detect practically all clinically relevant hemoglobin variants
+- The gold standard for testing hemoglobin
+
+**Limitations**
+- Completely not portable
+- Extremely expensive
+- Complex to maintain
+- Needs a controlled climate and steady electricity
+- Needs lab techs
+- Inaccurate when a recent blood transfusion has occurred
+- Rare variants can skew the results
+
+### 4. Sebia Capillarys
+
+**How it works:** Uses high voltage inside glass capillaries to separate hemoglobin variants by charge. It then uses electroosmotic flow and a UV spectrophotometer.
+
+**Problem it solves**
+- Resolves the variant overlapping problem that HPLC has, which makes it a definitive confirmatory test
+
+**Limitations**
+- Extremely expensive
+- Not portable
+- Inaccurate after a transfusion
+- Needs lab technicians
+
+### 5. Molecular / Genetic Sequencers (PCR, LAMP kits, Sanger/NGS)
+
+**How they work:** They don't look at the hemoglobin protein. Instead they extract DNA from white blood cells or cheek swabs and read the actual HBB gene sequence.
+
+**Problems they solve**
+- Accurate even if the patient has had a blood transfusion
+- If the person had received donor blood, it can detect the person's actual blood, so it does not miss/give a false negative
+
+**Limitations**
+- High cost per test
+- Often takes hours to days
+- Needs strict contamination controls
+- Requires someone highly trained to read the data
+
+### Gap in the Existing Options
+
+- **Strips:** free hardware and cheap, but only yes/no with no percentages.
+- **Gazelle:** quantitative and portable, but $1,200-3,000 for the hardware and needs precise operator mixing.
+- **HPLC / Sebia:** the most accurate, but $30,000-100,000 and lab-only.
+- **Molecular:** accurate after transfusion, but slow and expensive per test.
 
